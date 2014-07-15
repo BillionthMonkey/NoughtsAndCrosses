@@ -4,5 +4,5 @@ def test_legal_move():
 
 def test_move_bounds_lower():
     move = -1
-    last_move_was_legal = move < 0
+    last_move_was_legal = move > 0
     assert last_move_was_legal is False
