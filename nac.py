@@ -12,4 +12,4 @@ def test_move_bounds_upper():
 
 
 def is_legal(move):
-    return move >= 0
+    return move >= 0 and move < 9
