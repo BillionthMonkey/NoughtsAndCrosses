@@ -7,6 +7,9 @@ def test_move_bounds_lower():
 def test_move_lower_boundary():
     assert is_legal(0) is True
 
+def test_move_bounds_upper():
+    assert is_legal(9) is False
+
 
 def is_legal(move):
     return move >= 0
