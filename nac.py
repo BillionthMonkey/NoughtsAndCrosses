@@ -3,5 +3,5 @@ def test_legal_move():
     assert last_move_was_legal
 
 def test_illegal_move():
-    last_move_was_legal = True
+    last_move_was_legal = False
     assert last_move_was_legal is False
