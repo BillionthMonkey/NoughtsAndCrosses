@@ -9,4 +9,4 @@ def test_move_lower_boundary():
 
 
 def is_legal(move):
-    return move > 0
+    return move >= 0
