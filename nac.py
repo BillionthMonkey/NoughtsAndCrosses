@@ -7,6 +7,9 @@ def test_move_is_not_legal_if_already_played():
 def test_move_is_not_legal_if_below_lower_bound():
 	assert is_legal(-1, []) is False
 
+def test_move_is_not_legal_if_above_upper_bound():
+	assert is_legal(9, []) is False
+
 
 def is_legal(move, moves_played_so_far):
 	move_within_bounds = move > -1
