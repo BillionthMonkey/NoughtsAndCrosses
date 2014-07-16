@@ -5,4 +5,7 @@ def test_move_is_legal_if_not_already_played():
 	assert is_legal is True
 
 def test_move_is_not_legal_if_already_played():
-	assert (0 not in [0]) is False
+	move = 0
+	moves_played_so_far = [0]
+	is_legal = move not in moves_played_so_far
+	assert is_legal is False
