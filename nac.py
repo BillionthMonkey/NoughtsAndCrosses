@@ -1,2 +1,4 @@
 def test_move_is_legal_if_not_already_played():
-	assert 0 not in []
+	move = 0
+	moves_played_so_far = []
+	assert move not in moves_played_so_far
