@@ -12,6 +12,6 @@ def test_move_is_not_legal_if_above_upper_bound():
 
 
 def is_legal(move, moves_played_so_far):
-	move_within_bounds = move > -1
+	move_within_bounds = move > -1 and move < 9
 	move_not_played = move not in moves_played_so_far
 	return move_within_bounds and move_not_played
