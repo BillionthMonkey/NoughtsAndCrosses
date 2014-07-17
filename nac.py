@@ -28,7 +28,10 @@ def test_not_draw():
 def test_top_row_filled_player_one_is_win():
 	nac = NoughtsAndCrosses()
 	nac.moves_played_so_far = [ 0, 7, 1, 8, 2 ]
-	assert set([0, 1, 2]).issubset(set(nac.moves_played_so_far[0::2]))
+	player_one_moves = set(nac.moves_played_so_far[0::2])
+	top_row = set([0, 1, 2])
+	is_win_for_player_one = top_row.issubset(player_one_moves)
+	assert is_win_for_player_one is True
 
 
 class NoughtsAndCrosses:
