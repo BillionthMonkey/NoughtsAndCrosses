@@ -36,7 +36,10 @@ def test_top_row_filled_player_one_is_win():
 def test_middle_row_filled_player_one_is_win():
 	nac = NoughtsAndCrosses()
 	nac.moves_played_so_far = [ 3, 7, 4, 8, 5 ]
-	assert set([3, 4, 5]).issubset(set(nac.moves_played_so_far[0::2]))
+	player_one_moves = set(nac.moves_played_so_far[0::2])
+	middle_row = set([3, 4, 5])
+	is_win_for_player_one = middle_row.issubset(player_one_moves)
+	assert is_win_for_player_one is True
 
 
 class NoughtsAndCrosses:
