@@ -18,7 +18,9 @@ def test_move_is_not_legal_if_above_upper_bound():
 def test_draw():
 	nac = NaughtsAndCrosses()
 	moves_played_so_far = [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
-	assert len(moves_played_so_far) is 9
+	max_number_of_moves = 9
+	is_draw = len(moves_played_so_far) is max_number_of_moves
+	assert is_draw is True
 
 
 class NaughtsAndCrosses:
