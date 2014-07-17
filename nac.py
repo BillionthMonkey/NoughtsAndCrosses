@@ -25,7 +25,7 @@ def test_draw():
 def test_not_draw():
 	nac = NaughtsAndCrosses()
 	nac.moves_played_so_far = [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-	assert len(nac.moves_played_so_far) is 9
+	assert len(nac.moves_played_so_far) is not 9
 
 
 class NaughtsAndCrosses:
