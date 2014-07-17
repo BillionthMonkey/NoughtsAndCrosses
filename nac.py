@@ -15,6 +15,11 @@ def test_move_is_not_legal_if_above_upper_bound():
 	nac = NaughtsAndCrosses()
 	assert nac.is_legal(9) is False
 
+def test_draw():
+	nac = NaughtsAndCrosses()
+	moves_played_so_far = [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+	assert len(moves_played_so_far) is 0
+
 
 class NaughtsAndCrosses:
 	def __init__(self):
