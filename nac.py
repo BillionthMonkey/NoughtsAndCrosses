@@ -25,6 +25,11 @@ def test_not_draw():
 	nac.moves_played_so_far = [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 	assert nac.is_draw() is False
 
+def test_top_row_filled_is_win():
+	nac = NaughtsAndCrosses()
+	nac.moves_played_so_far = [ 0, 7, 1, 8, 2 ]
+	assert not set([0, 1, 2]).issubset(set(nac.moves_played_so_far[0::2]))
+
 
 class NaughtsAndCrosses:
 	def __init__(self):
