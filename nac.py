@@ -17,17 +17,13 @@ def test_move_is_not_legal_if_above_upper_bound():
 
 def test_draw():
 	nac = NaughtsAndCrosses()
-	moves_played_so_far = [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
-	max_number_of_moves = 9
-	is_draw = len(moves_played_so_far) is max_number_of_moves
-	assert is_draw is True
+	nac.moves_played_so_far = [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+	assert nac.is_draw() is True
 
 def test_not_draw():
 	nac = NaughtsAndCrosses()
 	nac.moves_played_so_far = [ 0, 1, 2, 3, 4, 5, 6, 7 ]
-	max_number_of_moves = 9
-	is_draw = len(nac.moves_played_so_far) is max_number_of_moves
-	assert is_draw is False
+	assert nac.is_draw() is False
 
 
 class NaughtsAndCrosses:
@@ -38,3 +34,7 @@ class NaughtsAndCrosses:
 		move_within_bounds = move > -1 and move < 9
 		move_not_played = move not in self.moves_played_so_far
 		return move_within_bounds and move_not_played
+
+	def is_draw(self):
+		max_number_of_moves = 9
+		return len(self.moves_played_so_far) is max_number_of_moves
