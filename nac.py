@@ -22,6 +22,11 @@ def test_draw():
 	is_draw = len(moves_played_so_far) is max_number_of_moves
 	assert is_draw is True
 
+def test_not_draw():
+	nac = NaughtsAndCrosses()
+	nac.moves_played_so_far = [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+	assert len(nac.moves_played_so_far) is 9
+
 
 class NaughtsAndCrosses:
 	def __init__(self):
