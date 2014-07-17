@@ -29,12 +29,12 @@ def test_not_draw():
 class NaughtsAndCrosses:
 	def __init__(self):
 		self.moves_played_so_far = []
+		self.max_number_of_moves = 9
 
 	def is_legal(self, move):
-		move_within_bounds = move > -1 and move < 9
+		move_within_bounds = move > -1 and move < self.max_number_of_moves
 		move_not_played = move not in self.moves_played_so_far
 		return move_within_bounds and move_not_played
 
 	def is_draw(self):
-		max_number_of_moves = 9
-		return len(self.moves_played_so_far) is max_number_of_moves
+		return len(self.moves_played_so_far) is self.max_number_of_moves
