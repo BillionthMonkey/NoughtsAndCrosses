@@ -37,6 +37,9 @@ def test_bottom_row_filled_player_one_is_win():
 def test_first_column_filled_player_one_is_win():
 	_is_win_for_player_one([ 0, 7, 3, 8, 6 ])
 
+def test_second_column_filled_player_one_is_win():
+	_is_win_for_player_one([ 1, 6, 4, 8, 7 ])
+
 def _is_win_for_player_one(moves_played_so_far):
     nac = NoughtsAndCrosses()
     nac.moves_played_so_far = moves_played_so_far
