@@ -63,10 +63,11 @@ class NoughtsAndCrosses:
 		top_row = set([0, 1, 2])
 		middle_row = set([3, 4, 5])
 		bottom_row = set([6, 7, 8])
+		first_column = set([0, 3, 6])
 		return self._is_win_for_player_one(top_row) \
 			or self._is_win_for_player_one(middle_row) \
 			or self._is_win_for_player_one(bottom_row) \
-			or self._is_win_for_player_one(set([0, 3, 6]))
+			or self._is_win_for_player_one(first_column)
 
 	def _is_win_for_player_one(self, pattern):
 		player_one_moves = set(self.moves_played_so_far[0::2])
