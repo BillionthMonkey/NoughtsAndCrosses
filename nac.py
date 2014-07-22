@@ -26,24 +26,21 @@ def test_not_draw():
 	assert nac.is_draw() is False
 
 def test_top_row_filled_player_one_is_win():
-	nac = NoughtsAndCrosses()
-	nac.moves_played_so_far = [ 0, 7, 1, 8, 2 ]
-	assert nac.is_win_for_player_one() is True
+	_is_win_for_player_one([ 0, 7, 1, 8, 2 ])
 
 def test_middle_row_filled_player_one_is_win():
-	nac = NoughtsAndCrosses()
-	nac.moves_played_so_far = [ 3, 7, 4, 8, 5 ]
-	assert nac.is_win_for_player_one() is True
+	_is_win_for_player_one([ 3, 7, 4, 8, 5 ])
 
 def test_bottom_row_filled_player_one_is_win():
-	nac = NoughtsAndCrosses()
-	nac.moves_played_so_far = [ 6, 0, 7, 1, 8 ]
-	assert nac.is_win_for_player_one() is True
+	_is_win_for_player_one([ 6, 0, 7, 1, 8 ])
 
 def test_first_column_filled_player_one_is_win():
-	nac = NoughtsAndCrosses()
-	nac.moves_played_so_far = [ 0, 7, 3, 8, 6 ]
-	assert nac.is_win_for_player_one() is True
+	_is_win_for_player_one([ 0, 7, 3, 8, 6 ])
+
+def _is_win_for_player_one(moves_played_so_far):
+    nac = NoughtsAndCrosses()
+    nac.moves_played_so_far = moves_played_so_far
+    assert nac.is_win_for_player_one() is True
 
 
 class NoughtsAndCrosses:
