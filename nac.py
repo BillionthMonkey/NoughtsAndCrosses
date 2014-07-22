@@ -46,7 +46,7 @@ def test_third_column_filled_player_one_is_win():
 def test_top_left_diagonal_filled_player_one_is_win():
 	_is_win_for_player_one([ 0, 7, 4, 6, 8 ])
 
-def test_bottom_right_diagonal_filled_player_one_is_win():
+def test_bottom_left_diagonal_filled_player_one_is_win():
 	_is_win_for_player_one([ 2, 7, 4, 8, 6 ])
 
 def _is_win_for_player_one(moves_played_so_far):
@@ -76,7 +76,7 @@ class NoughtsAndCrosses:
 		second_column = set([1, 4, 7])
 		third_column = set([2, 5, 8])
 		top_left_diagonal = set([0, 4, 8])
-		bottom_right_diagonal = set([2, 4, 6])
+		bottom_left_diagonal = set([2, 4, 6])
 		return self._is_win_for_player_one(top_row) \
 			or self._is_win_for_player_one(middle_row) \
 			or self._is_win_for_player_one(bottom_row) \
@@ -84,7 +84,7 @@ class NoughtsAndCrosses:
 			or self._is_win_for_player_one(second_column) \
 			or self._is_win_for_player_one(third_column) \
 			or self._is_win_for_player_one(top_left_diagonal) \
-			or self._is_win_for_player_one(bottom_right_diagonal)
+			or self._is_win_for_player_one(bottom_left_diagonal)
 
 	def _is_win_for_player_one(self, pattern):
 		player_one_moves = set(self.moves_played_so_far[0::2])
