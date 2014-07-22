@@ -82,7 +82,8 @@ class NoughtsAndCrosses:
 			or self._is_win_for_player_one(first_column) \
 			or self._is_win_for_player_one(second_column) \
 			or self._is_win_for_player_one(third_column) \
-			or self._is_win_for_player_one(top_left_diagonal)
+			or self._is_win_for_player_one(top_left_diagonal) \
+			or self._is_win_for_player_one(set([2, 4, 6]))
 
 	def _is_win_for_player_one(self, pattern):
 		player_one_moves = set(self.moves_played_so_far[0::2])
