@@ -40,6 +40,11 @@ def test_bottom_row_filled_player_one_is_win():
 	nac.moves_played_so_far = [ 6, 0, 7, 1, 8 ]
 	assert nac.is_win_for_player_one() is True
 
+def test_first_column_filled_player_one_is_win():
+	nac = NoughtsAndCrosses()
+	nac.moves_played_so_far = [ 0, 7, 3, 8, 6 ]
+	assert nac.is_win_for_player_one() is True
+
 
 class NoughtsAndCrosses:
 	def __init__(self):
