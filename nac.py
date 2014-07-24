@@ -77,17 +77,17 @@ class NoughtsAndCrosses:
 		third_column = set([2, 5, 8])
 		top_left_diagonal = set([0, 4, 8])
 		bottom_left_diagonal = set([2, 4, 6])
-		return self._is_win_for_player_one(top_row) \
-			or self._is_win_for_player_one(middle_row) \
-			or self._is_win_for_player_one(bottom_row) \
-			or self._is_win_for_player_one(first_column) \
-			or self._is_win_for_player_one(second_column) \
-			or self._is_win_for_player_one(third_column) \
-			or self._is_win_for_player_one(top_left_diagonal) \
-			or self._is_win_for_player_one(bottom_left_diagonal)
+		return self._is_win_for_player_one(top_row, self._player_one_moves()) \
+			or self._is_win_for_player_one(middle_row, self._player_one_moves()) \
+			or self._is_win_for_player_one(bottom_row, self._player_one_moves()) \
+			or self._is_win_for_player_one(first_column, self._player_one_moves()) \
+			or self._is_win_for_player_one(second_column, self._player_one_moves()) \
+			or self._is_win_for_player_one(third_column, self._player_one_moves()) \
+			or self._is_win_for_player_one(top_left_diagonal, self._player_one_moves()) \
+			or self._is_win_for_player_one(bottom_left_diagonal, self._player_one_moves())
 
-	def _is_win_for_player_one(self, pattern):
-		return pattern.issubset(self._player_one_moves())
+	def _is_win_for_player_one(self, pattern, moves):
+		return pattern.issubset(moves)
 
 	def _player_one_moves(self):
 		return set(self.moves_played_so_far[0::2])
