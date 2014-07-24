@@ -87,5 +87,7 @@ class NoughtsAndCrosses:
 			or self._is_win_for_player_one(bottom_left_diagonal)
 
 	def _is_win_for_player_one(self, pattern):
-		player_one_moves = set(self.moves_played_so_far[0::2])
-		return pattern.issubset(player_one_moves)
+		return pattern.issubset(self._player_one_moves())
+
+	def _player_one_moves(self):
+		return set(self.moves_played_so_far[0::2])
