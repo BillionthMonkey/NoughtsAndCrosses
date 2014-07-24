@@ -69,6 +69,10 @@ class NoughtsAndCrosses:
 		return len(self.moves_played_so_far) is self.max_number_of_moves
 
 	def is_win_for_player_one(self):
+		moves = self._player_one_moves()
+		return self._is_win(moves)
+
+	def _is_win(self, moves):
 		top_row = set([0, 1, 2])
 		middle_row = set([3, 4, 5])
 		bottom_row = set([6, 7, 8])
@@ -77,7 +81,6 @@ class NoughtsAndCrosses:
 		third_column = set([2, 5, 8])
 		top_left_diagonal = set([0, 4, 8])
 		bottom_left_diagonal = set([2, 4, 6])
-		moves = self._player_one_moves()
 		return top_row.issubset(moves) \
 			or middle_row.issubset(moves) \
 			or bottom_row.issubset(moves) \
