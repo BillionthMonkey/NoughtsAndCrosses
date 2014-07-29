@@ -50,7 +50,10 @@ def test_bottom_left_diagonal_filled_player_one_is_win():
     _is_win_for_player_one([ 2, 7, 4, 8, 6 ])
 
 def test_is_win_for_player_two():
-    assert [ 5, 0, 7, 1, 8, 2 ][1::2] == [ 0, 1, 2 ]
+    moves_played_so_far = [ 5, 0, 7, 1, 8, 2 ]
+    player_two_moves = moves_played_so_far[1::2]
+    is_win_for_player_two = player_two_moves == [ 0, 1, 2 ]
+    assert is_win_for_player_two is True
 
 def _is_win_for_player_one(moves_played_so_far):
     nac = _create_noughts_and_crosses()
