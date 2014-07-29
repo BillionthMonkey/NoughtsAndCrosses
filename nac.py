@@ -52,7 +52,8 @@ def test_bottom_left_diagonal_filled_player_one_is_win():
 def test_is_win_for_player_two():
     moves_played_so_far = [ 5, 0, 7, 1, 8, 2 ]
     player_two_moves = moves_played_so_far[1::2]
-    is_win_for_player_two = player_two_moves == [ 0, 1, 2 ]
+    result_checker = ResultChecker()
+    is_win_for_player_two = result_checker.is_win(player_two_moves)
     assert is_win_for_player_two is True
 
 def _is_win_for_player_one(moves_played_so_far):
