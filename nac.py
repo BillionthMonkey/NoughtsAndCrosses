@@ -8,4 +8,5 @@ def test_win_with_two_options():
         [0, 1, 2],
         [3, 4, 5]
     ]
-    assert any([moves == option for option in options])
+    assert any([set(moves).issuperset(set(option))
+        for option in options])
