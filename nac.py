@@ -11,4 +11,4 @@ def test_complete_top_row_in_different_order_is_win():
 def test_more_than_complete_top_row_is_win():
     moves = [0, 1, 2, 3]
     top_row = [0, 1, 2]
-    assert moves == top_row
+    assert set(moves).issuperset(set(top_row))
