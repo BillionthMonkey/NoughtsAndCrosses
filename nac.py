@@ -17,5 +17,7 @@ def test_complete_middle_row_is_win():
 
 def is_win(moves):
     top_row = set([0, 1, 2])
-    return set(moves).issuperset(top_row) \
-            or moves == [3, 4, 5]
+    middle_row = set([3, 4, 5])
+    wins = [top_row,
+            middle_row]
+    return any(set(moves).issuperset(win) for win in wins)
