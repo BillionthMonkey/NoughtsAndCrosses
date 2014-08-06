@@ -46,6 +46,9 @@ def test_move_beyond_upper_bound():
 
 
 class NoughtsAndCrosses():
+    def __init__(self):
+        self.board_size = 9
+
     def is_win(self, moves, options):
         return any([set(moves).issuperset(set(option))
             for option in options])
@@ -55,12 +58,10 @@ class NoughtsAndCrosses():
         return moves[player::number_of_players]
 
     def is_draw(self, moves):
-        board_size = 9
-        return len(moves) is board_size
+        return len(moves) is self.board_size
 
     def is_legal(self, move, moves):
         move_lower_bound = 0
-        board_size = 9
         return move >= move_lower_bound \
-            and move < board_size \
+            and move < self.board_size \
             and move not in moves
