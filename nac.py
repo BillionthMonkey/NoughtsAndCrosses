@@ -53,4 +53,4 @@ def is_draw(moves):
 
 def is_legal(move, moves):
     move_lower_bound = 0
-    return move >= move_lower_bound and move not in moves
+    return move >= move_lower_bound and move < 9 and move not in moves
