@@ -32,6 +32,9 @@ def test_not_draw():
 def test_legal_move():
     assert is_legal(0, []) is True
 
+def test_move_beyond_lower_bound():
+    assert is_legal(-1, []) is False
+
 
 def is_win(moves, options):
     return any([set(moves).issuperset(set(option))
