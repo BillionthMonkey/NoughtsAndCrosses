@@ -29,6 +29,9 @@ def test_not_draw():
     moves = [0, 1, 2, 3, 4, 5, 6, 7]
     assert is_draw(moves) is False
 
+def test_legal_move():
+    assert move not in moves
+
 
 def is_win(moves, options):
     return any([set(moves).issuperset(set(option))
