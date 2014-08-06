@@ -25,6 +25,10 @@ def test_draw():
     moves = [0, 1, 2, 3, 4, 5, 6, 7, 8]
     assert is_draw(moves) is True
 
+def test_not_draw():
+    moves = [0, 1, 2, 3, 4, 5, 6, 7]
+    assert is_draw(moves) is False
+
 
 def is_win(moves, options):
     return any([set(moves).issuperset(set(option))
