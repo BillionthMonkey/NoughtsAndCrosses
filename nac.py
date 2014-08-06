@@ -23,8 +23,7 @@ def test_extract_second_player_moves():
 
 def test_draw():
     moves = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-    is_draw = True
-    assert is_draw is True
+    assert is_draw(moves) is True
 
 
 def is_win(moves, options):
@@ -34,3 +33,6 @@ def is_win(moves, options):
 def moves_for_player(player, moves):
     number_of_players = 2
     return moves[player::number_of_players]
+
+def is_draw(moves):
+    return True
