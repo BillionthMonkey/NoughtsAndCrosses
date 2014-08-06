@@ -35,6 +35,9 @@ def test_legal_move():
 def test_move_beyond_lower_bound():
     assert is_legal(-1, []) is False
 
+def test_move_beyond_upper_bound():
+    assert is_legal(9, []) is False
+
 
 def is_win(moves, options):
     return any([set(moves).issuperset(set(option))
