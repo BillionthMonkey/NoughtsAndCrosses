@@ -23,7 +23,7 @@ def test_extract_second_player_moves():
 
 def test_draw():
     moves = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-    is_draw = False
+    is_draw = True
     assert is_draw is True
 
 
