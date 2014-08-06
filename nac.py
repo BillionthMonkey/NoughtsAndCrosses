@@ -20,7 +20,7 @@ def test_extract_player_one_moves():
 
 def test_extract_player_two_moves():
     moves = [4, 5, 6, 7, 8]
-    player_two_moves = moves
+    player_two_moves = moves[1::2]
     assert player_two_moves == [5, 7]
 
 
