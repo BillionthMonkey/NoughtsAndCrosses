@@ -39,4 +39,5 @@ def moves_for_player(player, moves):
     return moves[player::number_of_players]
 
 def is_draw(moves):
-    return len(moves) is 9
+    board_size = 9
+    return len(moves) is board_size
