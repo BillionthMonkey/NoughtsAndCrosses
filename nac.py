@@ -27,4 +27,5 @@ def is_win(moves, options):
         for option in options])
 
 def moves_for_player(player, moves):
-    return moves[player::2]
+    number_of_players = 2
+    return moves[player::number_of_players]
