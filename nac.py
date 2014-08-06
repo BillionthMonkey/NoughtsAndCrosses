@@ -30,6 +30,8 @@ def test_not_draw():
     assert is_draw(moves) is False
 
 def test_legal_move():
+    moves = []
+    move = 0
     assert move not in moves
 
 
