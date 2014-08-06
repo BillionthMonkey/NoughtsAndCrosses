@@ -39,4 +39,4 @@ def moves_for_player(player, moves):
     return moves[player::number_of_players]
 
 def is_draw(moves):
-    return True
+    return len(moves) is 9
