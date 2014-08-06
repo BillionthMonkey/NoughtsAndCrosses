@@ -30,9 +30,7 @@ def test_not_draw():
     assert is_draw(moves) is False
 
 def test_legal_move():
-    moves = []
-    move = 0
-    assert move not in moves
+    assert is_legal(0, []) is True
 
 
 def is_win(moves, options):
@@ -46,3 +44,6 @@ def moves_for_player(player, moves):
 def is_draw(moves):
     board_size = 9
     return len(moves) is board_size
+
+def is_legal(move, moves):
+    return move not in moves
