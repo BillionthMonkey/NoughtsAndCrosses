@@ -13,6 +13,11 @@ def test_win_with_two_options():
     ]
     assert is_win(moves, options) is True
 
+def test_extract_player_one_moves():
+    moves = [2, 7, 1, 8, 3]
+    player_one_moves = moves
+    assert player_one_moves == [2, 1, 3]
+
 
 def is_win(moves, options):
     return any([set(moves).issuperset(set(option))
