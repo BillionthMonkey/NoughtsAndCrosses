@@ -49,4 +49,5 @@ def is_draw(moves):
     return len(moves) is board_size
 
 def is_legal(move, moves):
-    return move >= 0 and move not in moves
+    move_lower_bound = 0
+    return move >= move_lower_bound and move not in moves
