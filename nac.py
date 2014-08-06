@@ -21,6 +21,11 @@ def test_extract_second_player_moves():
     moves = [4, 5, 6, 7, 8]
     assert moves_for_player(1, moves) == [5, 7]
 
+def test_draw():
+    moves = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    is_draw = False
+    assert is_draw is True
+
 
 def is_win(moves, options):
     return any([set(moves).issuperset(set(option))
