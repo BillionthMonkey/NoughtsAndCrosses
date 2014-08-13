@@ -1,2 +1,2 @@
-def test_it_is_alive():
-    assert True
+def test_play_move_calls_is_legal():
+    controller = NoughtsAndCrossesController()
