@@ -2,7 +2,8 @@ import mock
 
 def test_playing_legal_move_updates_view():
     fake_view = mock.Mock()
-    controller = NoughtsAndCrossesController(None, fake_view)
+    fake_model = mock.Mock()
+    controller = NoughtsAndCrossesController(fake_model, fake_view)
     controller.play_move(0)
     fake_view.add_move.assert_called_with(0)
 
@@ -20,4 +21,5 @@ class NoughtsAndCrossesController:
         self.view = view
 
     def play_move(self, move):
-        self.view.add_move(move)
+        if self.model.is_legal(move):
+            self.view.add_move(move)
