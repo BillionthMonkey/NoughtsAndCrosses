@@ -1,4 +1,4 @@
-def test_play_move_calls_is_legal():
+def test_playing_legal_move_updates_view():
     controller = NoughtsAndCrossesController()
 
 class NoughtsAndCrossesController:
