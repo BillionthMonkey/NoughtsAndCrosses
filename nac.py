@@ -1,5 +1,6 @@
 def test_playing_legal_move_updates_view():
     controller = NoughtsAndCrossesController()
+    controller.play_move(0)
 
 class NoughtsAndCrossesController:
     pass
