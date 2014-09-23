@@ -20,6 +20,12 @@ class TestNoughtsAndCrosses():
         self.controller.play_move(42)
         assert not self.fake_view.add_move.called
 
+    def test_playing_illegal_move_reports_error_in_view(self):
+        self.fake_model.is_legal.return_value = False
+        self.controller.play_move(-1)
+        self.fake_view.report_error.assert_called_with('Illegal move')
+
+
 class NoughtsAndCrossesController:
     def __init__(self, model, view):
         self.model = model
