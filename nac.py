@@ -43,6 +43,7 @@ class TestNoughtsAndCrosses():
         self.fake_model.play_move.return_value = MoveResult.draw
         self.controller.play_move(4)
         assert self.fake_view.draw.called
+        assert not self.fake_view.win.called
 
 
 class MoveResult:
