@@ -1,6 +1,6 @@
 import mock
 
-class TestNoughtsAndCrosses():
+class TestNoughtsAndCrossesController():
     def setup_method(self, method):
         self.fake_view = mock.Mock()
         self.fake_model = mock.Mock()
