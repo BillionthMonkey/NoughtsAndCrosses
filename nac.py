@@ -38,7 +38,6 @@ class TestNoughtsAndCrosses():
         assert self.fake_view.win.called
 
 
-
 class MoveResult:
     no_result = 0
     win = 1
@@ -54,5 +53,6 @@ class NoughtsAndCrossesController:
         if self.model.is_legal(move):
             self.model.play_move(move)
             self.view.add_move(move)
+            self.view.win()
         else:
             self.view.report_error('Illegal move')
