@@ -12,6 +12,7 @@ class TestNoughtsAndCrosses():
         pass
 
     def test_playing_legal_move_updates_view(self):
+        self.fake_model.is_legal.return_value = True
         self.controller.play_move(0)
         self.fake_view.add_move.assert_called_with(0)
 
