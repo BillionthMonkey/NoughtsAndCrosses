@@ -39,6 +39,7 @@ class NoughtsAndCrossesController:
 
     def play_move(self, move):
         if self.model.is_legal(move):
+            self.model.play_move(move)
             self.view.add_move(move)
         else:
             self.view.report_error('Illegal move')
