@@ -31,6 +31,19 @@ class TestNoughtsAndCrosses():
         self.controller.play_move(2)
         self.fake_model.play_move.assert_called_with(2)
 
+    def test_playing_move_that_wins_updates_view(self):
+        self.fake_model.is_legal.return_value = True
+        self.fake_model.play_move.return_value = MoveResult.win
+        self.controller.play_move(4)
+        assert self.fake_view.win.called
+
+
+
+class MoveResult:
+    no_result = 0
+    win = 1
+    draw = 2
+
 
 class NoughtsAndCrossesController:
     def __init__(self, model, view):
