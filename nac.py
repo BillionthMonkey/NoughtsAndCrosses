@@ -61,7 +61,8 @@ class NoughtsAndCrossesController:
         if self.model.is_legal(move):
             move_result = self.model.play_move(move)
             self.view.add_move(move)
-            self.view.win()
+            if move_result == MoveResult.win:
+                self.view.win()
             if move_result == MoveResult.draw:
                 self.view.draw()
         else:
