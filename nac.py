@@ -51,6 +51,10 @@ class TestNoughtsAndCrossesController():
         model = NoughtsAndCrossesModel()
         assert model.is_legal(0) is True
 
+    def test_is_legal_returns_false_with_illegal_move(self):
+        model = NoughtsAndCrossesModel()
+        assert model.is_legal(-1) is False
+
 
 class MoveResult:
     no_result = 0
