@@ -93,3 +93,6 @@ class NoughtsAndCrossesModel():
     def is_legal(self, move):
         number_of_cells = 9
         return move in range(number_of_cells)
+
+    def play_move(self, move):
+        pass
