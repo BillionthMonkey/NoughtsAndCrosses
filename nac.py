@@ -79,4 +79,5 @@ class NoughtsAndCrossesController:
 
 
 class NoughtsAndCrossesModel():
-    pass
+    def is_legal(self, move):
+        return True
