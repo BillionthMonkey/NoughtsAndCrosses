@@ -59,6 +59,9 @@ class TestNoughtsAndCrossesController():
     def test_is_legal_returns_false_with_another_illegal_move(self):
         assert self.model.is_legal(9) is False
 
+    def test_is_legal_returns_false_if_move_already_played(self):
+        self.model.play_move(0)
+
 
 class MoveResult:
     no_result = 0
