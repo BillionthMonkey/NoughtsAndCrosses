@@ -46,6 +46,11 @@ class TestNoughtsAndCrossesController():
         assert not self.fake_view.win.called
 
 
+class TestNoughtsAndCrossesController():
+    def test_is_legal(self):
+        model = NoughtsAndCrossesModel()
+
+
 class MoveResult:
     no_result = 0
     win = 1
