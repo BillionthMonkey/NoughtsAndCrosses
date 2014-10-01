@@ -97,12 +97,12 @@ class NoughtsAndCrossesController:
 
 class NoughtsAndCrossesModel():
     def __init__(self):
-        self._last_move_played = None
+        self._moves_played = []
 
     def is_legal(self, move):
         number_of_cells = 9
         return move in range(number_of_cells) \
-            and move != self._last_move_played
+            and move not in self._moves_played
 
     def play_move(self, move):
-        self._last_move_played = move
+        self._moves_played.append(move)
