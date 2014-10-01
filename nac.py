@@ -75,3 +75,7 @@ class NoughtsAndCrossesController:
             self.view.win()
         if move_result == MoveResult.draw:
             self.view.draw()
+
+
+class NoughtsAndCrossesModel():
+    pass
