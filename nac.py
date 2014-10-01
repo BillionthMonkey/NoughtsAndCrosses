@@ -88,4 +88,5 @@ class NoughtsAndCrossesController:
 
 class NoughtsAndCrossesModel():
     def is_legal(self, move):
-        return move in range(9)
+        number_of_cells = 9
+        return move in range(number_of_cells)
