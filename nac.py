@@ -46,7 +46,7 @@ class TestNoughtsAndCrossesController():
         assert not self.fake_view.win.called
 
 
-class TestNoughtsAndCrossesController():
+class TestNoughtsAndCrossesModel():
     def setup_method(self, method):
         self.model = NoughtsAndCrossesModel()
 
