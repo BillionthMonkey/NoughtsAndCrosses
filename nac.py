@@ -68,6 +68,12 @@ class TestNoughtsAndCrossesModel():
         self.model.play_move(1)
         assert self.model.is_legal(0) is False
 
+    def test_play_move_calls_result_checker_with_moves_played(self):
+        self.model.play_move(0)
+        self.model.play_move(1)
+        self.model.play_move(2)
+        self.fake_result_checker.check_result.assert_called_with([0, 1, 2])
+
 
 class MoveResult:
     no_result = 0
