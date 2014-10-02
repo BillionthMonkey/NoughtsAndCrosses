@@ -75,6 +75,11 @@ class TestNoughtsAndCrossesModel():
         self.model.play_move(2)
         self.fake_result_checker.check_result.assert_called_with([0, 1, 2])
 
+    def test_play_move_returns_the_same_value_as_check_result(self):
+        self.fake_result_checker.check_result.return_value \
+            = MoveResult.no_result
+        assert self.play_move(0) is MoveResult.no_result
+
 
 class MoveResult:
     no_result = 0
