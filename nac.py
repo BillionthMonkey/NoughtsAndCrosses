@@ -142,3 +142,6 @@ class ResultChecker():
     def __init__(self, winning_moves, number_of_cells):
         self._winning_moves = winning_moves
         self._number_of_cells = number_of_cells
+
+    def check_result(self, moves_played):
+        return MoveResult.no_result
