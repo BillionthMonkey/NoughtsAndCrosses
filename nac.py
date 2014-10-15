@@ -81,6 +81,14 @@ class TestNoughtsAndCrossesModel():
         assert self.model.play_move(0) is MoveResult.no_result
 
 
+class TestResultChecker():
+    def setup_method(self, method):
+        pass
+
+    def test_no_result(self):
+        result_checker = ResultChecker()
+
+
 class MoveResult:
     no_result = 0
     win = 1
