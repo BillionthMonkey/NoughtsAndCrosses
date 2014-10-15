@@ -49,7 +49,7 @@ class TestNoughtsAndCrossesController():
 class TestNoughtsAndCrossesModel():
     def setup_method(self, method):
         self.fake_result_checker = mock.Mock()
-        self.model = NoughtsAndCrossesModel(self.fake_result_checker)
+        self.model = NoughtsAndCrossesModel(self.fake_result_checker, 9)
 
     def test_is_legal_returns_true_with_legal_move(self):
         assert self.model.is_legal(0) is True
@@ -124,13 +124,13 @@ class NoughtsAndCrossesController:
 
 
 class NoughtsAndCrossesModel():
-    def __init__(self, result_checker):
+    def __init__(self, result_checker, number_of_cells):
         self._result_checker = result_checker
         self._moves_played = []
+        self._number_of_cells = number_of_cells
 
     def is_legal(self, move):
-        number_of_cells = 9
-        return move in range(number_of_cells) \
+        return move in range(self._number_of_cells) \
             and move not in self._moves_played
 
     def play_move(self, move):
