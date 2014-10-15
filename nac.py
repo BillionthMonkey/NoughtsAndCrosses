@@ -93,6 +93,8 @@ class TestResultChecker():
         ]
         number_of_cells = 9
         result_checker = ResultChecker(winning_moves, number_of_cells)
+        moves_played = [0]
+        assert result_checker.check_result(moves_played) is MoveResult.no_result
 
 
 class MoveResult:
