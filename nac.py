@@ -136,4 +136,5 @@ class NoughtsAndCrossesModel():
 
 
 class ResultChecker():
-    pass
+    def __init__(self, winning_moves):
+        self._winning_moves = winning_moves
