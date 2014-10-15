@@ -83,29 +83,22 @@ class TestNoughtsAndCrossesModel():
 
 class TestResultChecker():
     def setup_method(self, method):
-        pass
+        winning_moves = [
+            [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ],
+            [ 0, 3, 6 ], [ 1, 4, 7 ], [ 2, 5, 8 ],
+            [ 0, 4, 8 ], [ 2, 4, 6 ]
+        ]
+        number_of_cells = 9
+        self.result_checker = ResultChecker(winning_moves, number_of_cells)
 
     def test_no_result(self):
-        winning_moves = [
-            [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ],
-            [ 0, 3, 6 ], [ 1, 4, 7 ], [ 2, 5, 8 ],
-            [ 0, 4, 8 ], [ 2, 4, 6 ]
-        ]
-        number_of_cells = 9
-        result_checker = ResultChecker(winning_moves, number_of_cells)
         moves_played = [0]
-        assert result_checker.check_result(moves_played) is MoveResult.no_result
+        assert self.result_checker.check_result(moves_played) \
+            is MoveResult.no_result
 
     def test_win(self):
-        winning_moves = [
-            [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ],
-            [ 0, 3, 6 ], [ 1, 4, 7 ], [ 2, 5, 8 ],
-            [ 0, 4, 8 ], [ 2, 4, 6 ]
-        ]
-        number_of_cells = 9
-        result_checker = ResultChecker(winning_moves, number_of_cells)
         moves_played = [0, 3, 1, 4, 2]
-        assert result_checker.check_result(moves_played) is MoveResult.win
+        assert self.result_checker.check_result(moves_played) is MoveResult.win
 
 
 class MoveResult:
