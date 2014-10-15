@@ -128,3 +128,7 @@ class NoughtsAndCrossesModel():
     def play_move(self, move):
         self._moves_played.append(move)
         return self._result_checker.check_result(self._moves_played)
+
+
+class ResultChecker():
+    pass
