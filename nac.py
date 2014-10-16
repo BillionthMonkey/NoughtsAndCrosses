@@ -164,7 +164,11 @@ class ResultChecker():
         return MoveResult.no_result
 
     def _current_player_wins(self, current_player_moves):
-        return any([set(current_player_moves).issuperset(set(winning_pattern)) for winning_pattern in self._winning_moves])
+        return any([self._moves_match(current_player_moves, winning_pattern) for winning_pattern in self._winning_moves])
+
+    @staticmethod
+    def _moves_match(played, pattern):
+        return set(played).issuperset(set(pattern))
 
     def _get_current_player_moves(self, moves_played):
         current_player = self._get_current_player(moves_played)
