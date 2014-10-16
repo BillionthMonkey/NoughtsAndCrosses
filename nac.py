@@ -159,10 +159,12 @@ class ResultChecker():
 
     def check_result(self, moves_played):
         current_player_moves = self._get_current_player_moves(moves_played)
-        for winning_pattern in self._winning_moves:
-            if set(current_player_moves).issuperset(set(winning_pattern)):
-                return MoveResult.win
+        if self._current_player_wins(current_player_moves):
+            return MoveResult.win
         return MoveResult.no_result
+
+    def _current_player_wins(self, current_player_moves):
+        return any([set(current_player_moves).issuperset(set(winning_pattern)) for winning_pattern in self._winning_moves])
 
     def _get_current_player_moves(self, moves_played):
         current_player = self._get_current_player(moves_played)
