@@ -104,6 +104,11 @@ class TestResultChecker():
         moves_played = [6, 0, 3, 1, 4, 2]
         assert self.result_checker.check_result(moves_played) is MoveResult.win
 
+    def test_not_win_with_complete_row(self):
+        moves_played = [0, 1, 2]
+        assert self.result_checker.check_result(moves_played) \
+            is MoveResult.no_result
+
 
 class MoveResult:
     no_result = 0
