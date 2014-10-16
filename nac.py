@@ -163,15 +163,15 @@ class ResultChecker():
         self._number_of_players = 2
 
     def check_result(self, moves_played):
-        current_player_moves = self._get_current_player_moves(moves_played)
-        if self._current_player_wins(current_player_moves):
+        if self._current_player_wins(moves_played):
             return MoveResult.win
         if self._is_draw(moves_played):
             return MoveResult.draw
         return MoveResult.no_result
 
     def _current_player_wins(self, moves):
-        return any([self._moves_match(moves, pattern) 
+        current_player_moves = self._get_current_player_moves(moves)
+        return any([self._moves_match(current_player_moves, pattern) 
             for pattern in self._winning_moves])
 
     @staticmethod
