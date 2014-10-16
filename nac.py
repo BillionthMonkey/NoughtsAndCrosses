@@ -163,8 +163,9 @@ class ResultChecker():
             return MoveResult.win
         return MoveResult.no_result
 
-    def _current_player_wins(self, current_player_moves):
-        return any([self._moves_match(current_player_moves, winning_pattern) for winning_pattern in self._winning_moves])
+    def _current_player_wins(self, moves):
+        return any([self._moves_match(moves, pattern) 
+            for pattern in self._winning_moves])
 
     @staticmethod
     def _moves_match(played, pattern):
