@@ -152,6 +152,7 @@ class ResultChecker():
         self._number_of_cells = number_of_cells
 
     def check_result(self, moves_played):
-        if moves_played == [0, 3, 1, 4, 2]:
-            return MoveResult.win
+        for winning_pattern in self._winning_moves:
+            if set(moves_played).issuperset(set(winning_pattern)):
+                return MoveResult.win
         return MoveResult.no_result
