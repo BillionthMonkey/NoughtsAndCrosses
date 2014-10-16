@@ -159,6 +159,8 @@ class ResultChecker():
         self._number_of_players = 2
 
     def check_result(self, moves_played):
+        if len(moves_played) is self._number_of_cells:
+            return MoveResult.draw
         current_player_moves = self._get_current_player_moves(moves_played)
         if self._current_player_wins(current_player_moves):
             return MoveResult.win
