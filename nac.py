@@ -155,10 +155,13 @@ class ResultChecker():
     def __init__(self, winning_moves, number_of_cells):
         self._winning_moves = winning_moves
         self._number_of_cells = number_of_cells
+        self._number_of_players = 2
 
     def check_result(self, moves_played):
-        current_player = 1 - len(moves_played) % 2
-        current_player_moves = moves_played[current_player::2]
+        current_player = (self._number_of_players - 1) \
+            - len(moves_played) % self._number_of_players
+        current_player_moves = \
+            moves_played[current_player::self._number_of_players]
         print current_player, current_player_moves
         for winning_pattern in self._winning_moves:
             if set(current_player_moves).issuperset(set(winning_pattern)):
