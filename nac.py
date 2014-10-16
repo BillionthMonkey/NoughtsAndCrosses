@@ -96,11 +96,11 @@ class TestResultChecker():
         assert self.result_checker.check_result(moves_played) \
             is MoveResult.no_result
 
-    def test_win(self):
+    def test_win_for_player_one(self):
         moves_played = [0, 3, 1, 4, 2]
         assert self.result_checker.check_result(moves_played) is MoveResult.win
 
-    def test_different_win(self):
+    def test_win_for_player_two(self):
         moves_played = [6, 0, 3, 1, 4, 2]
         assert self.result_checker.check_result(moves_played) is MoveResult.win
 
