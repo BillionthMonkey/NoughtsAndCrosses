@@ -158,14 +158,15 @@ class ResultChecker():
         self._number_of_players = 2
 
     def check_result(self, moves_played):
-        current_player = self._get_current_player(moves_played)
-        current_player_moves = \
-            moves_played[current_player::self._number_of_players]
-        print current_player, current_player_moves
+        current_player_moves = self._get_current_player_moves(moves_played)
         for winning_pattern in self._winning_moves:
             if set(current_player_moves).issuperset(set(winning_pattern)):
                 return MoveResult.win
         return MoveResult.no_result
+
+    def _get_current_player_moves(self, moves_played):
+        current_player = self._get_current_player(moves_played)
+        return moves_played[current_player::self._number_of_players]
 
     def _get_current_player(self, moves_played):
         return (len(moves_played) - 1) % self._number_of_players
