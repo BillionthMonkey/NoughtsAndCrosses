@@ -8,9 +8,6 @@ class TestNoughtsAndCrossesController():
             self.fake_model,
             self.fake_view)
 
-    def teardown_method(self, method):
-        pass
-
     def test_playing_legal_move_updates_view(self):
         self.fake_model.is_legal.return_value = True
         self.controller.play_move(0)
