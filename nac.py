@@ -168,5 +168,4 @@ class ResultChecker():
         return MoveResult.no_result
 
     def _get_current_player(self, moves_played):
-        return (self._number_of_players - 1) \
-            - len(moves_played) % self._number_of_players
+        return (len(moves_played) - 1) % self._number_of_players
