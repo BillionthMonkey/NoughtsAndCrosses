@@ -110,6 +110,10 @@ class TestResultChecker():
         moves_played = [0, 1, 2, 4, 3, 6, 5, 8, 7]
         assert self.result_checker.check_result(moves_played) is MoveResult.draw
 
+    def test_win_on_last_move(self):
+        moves_played = [0, 1, 2, 3, 4, 5, 7, 6, 8]
+        assert self.result_checker.check_result(moves_played) is MoveResult.win
+
 
 class MoveResult:
     no_result = 0
