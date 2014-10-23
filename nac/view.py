@@ -1,3 +1,3 @@
 class NoughtsAndCrossesView():
     def win(self):
-        pass
+        print 'Congratulations; you won!'
