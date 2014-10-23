@@ -9,3 +9,7 @@ class TestNoughtsAndCrossesView():
         view = NoughtsAndCrossesView()
         view.win()
         fake_stdout.write.assert_any_call('Congratulations; you won!')
+
+    def test_draw(self):
+        view = NoughtsAndCrossesView()
+        view.draw()
