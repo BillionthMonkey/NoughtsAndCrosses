@@ -3,4 +3,4 @@ class NoughtsAndCrossesView():
         print 'Congratulations; you won!'
 
     def draw(self):
-        pass
+        print "It's a draw!"
