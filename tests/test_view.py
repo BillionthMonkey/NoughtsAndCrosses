@@ -1,3 +1,5 @@
+from nac.view import NoughtsAndCrossesView
+
 class TestNoughtsAndCrossesView():
     def test_win(self):
-        view = nac.view.NoughtsAndCrossesView()
+        view = NoughtsAndCrossesView()
