@@ -11,5 +11,8 @@ class TestNoughtsAndCrossesView():
         fake_stdout.write.assert_any_call('Congratulations; you won!')
 
     def test_draw(self):
+        fake_stdout = mock.Mock()
+        sys.stdout = fake_stdout
         view = NoughtsAndCrossesView()
         view.draw()
+        fake_stdout.write.assert_any_call("It's a draw!")
