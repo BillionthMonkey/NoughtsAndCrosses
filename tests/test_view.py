@@ -3,16 +3,17 @@ import mock
 from nac.view import NoughtsAndCrossesView
 
 class TestNoughtsAndCrossesView():
+    def setup_method(self, method):
+        self.fake_stdout = mock.Mock()
+
     def test_win(self):
-        fake_stdout = mock.Mock()
-        sys.stdout = fake_stdout
+        sys.stdout = self.fake_stdout
         view = NoughtsAndCrossesView()
         view.win()
-        fake_stdout.write.assert_any_call('Congratulations; you won!')
+        self.fake_stdout.write.assert_any_call('Congratulations; you won!')
 
     def test_draw(self):
-        fake_stdout = mock.Mock()
-        sys.stdout = fake_stdout
+        sys.stdout = self.fake_stdout
         view = NoughtsAndCrossesView()
         view.draw()
-        fake_stdout.write.assert_any_call("It's a draw!")
+        self.fake_stdout.write.assert_any_call("It's a draw!")
