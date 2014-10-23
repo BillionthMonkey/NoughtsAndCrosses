@@ -1,2 +1,3 @@
 class NoughtsAndCrossesView():
-    pass
+    def win(self):
+        pass
