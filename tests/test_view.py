@@ -20,6 +20,14 @@ class TestNoughtsAndCrossesView():
 
     def test_reset(self, capsys):
         self.view.reset()
+        expected = ("+===+===+===+\n"
+                    "|   |   |   |\n"
+                    "+===+===+===+\n"
+                    "|   |   |   |\n"
+                    "+===+===+===+\n"
+                    "|   |   |   |\n"
+                    "+===+===+===+\n")
+        self._assert_stdout_is(expected, capsys)
 
     def _assert_stdout_is(self, expected, capsys):
         out, err = capsys.readouterr()
