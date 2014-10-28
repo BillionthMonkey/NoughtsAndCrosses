@@ -9,4 +9,11 @@ class NoughtsAndCrossesView():
         print message
 
     def reset(self):
-        pass
+        board = ("+===+===+===+\n"
+                 "|   |   |   |\n"
+                 "+===+===+===+\n"
+                 "|   |   |   |\n"
+                 "+===+===+===+\n"
+                 "|   |   |   |\n"
+                 "+===+===+===+")
+        print board
