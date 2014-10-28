@@ -1,10 +1,8 @@
 import sys
-import mock
 from nac.view import NoughtsAndCrossesView
 
 class TestNoughtsAndCrossesView():
     def setup_method(self, method):
-        self.fake_stdout = mock.Mock()
         self.view = NoughtsAndCrossesView()
 
     def test_win(self, capsys):
