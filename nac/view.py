@@ -7,3 +7,6 @@ class NoughtsAndCrossesView():
 
     def report_error(self, message):
         print message
+
+    def reset(self):
+        pass
