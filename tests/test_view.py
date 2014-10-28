@@ -9,18 +9,19 @@ class TestNoughtsAndCrossesView():
     def test_win(self, capsys):
         view = NoughtsAndCrossesView()
         view.win()
-        out, err = capsys.readouterr()
-        assert out == 'Congratulations; you won!\n'
+        self._assert_stdout_is('Congratulations; you won!\n', capsys)
 
     def test_draw(self, capsys):
         view = NoughtsAndCrossesView()
         view.draw()
-        out, err = capsys.readouterr()
-        assert out == "It's a draw!\n"
+        self._assert_stdout_is("It's a draw!\n", capsys)
 
     def test_report_error(self, capsys):
         view = NoughtsAndCrossesView()
         message = 'Illegal move.'
         view.report_error(message)
+        self._assert_stdout_is(message + '\n', capsys)
+
+    def _assert_stdout_is(self, expected, capsys):
         out, err = capsys.readouterr()
-        assert out == message + '\n'
+        assert out == expected
