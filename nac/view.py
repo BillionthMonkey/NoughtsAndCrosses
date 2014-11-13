@@ -11,5 +11,8 @@ class NoughtsAndCrossesView():
     def reset(self):
         self._board_renderer.render([])
 
+    def add_move(self, move):
+        pass
+
     def report_error(self, message):
         print message
