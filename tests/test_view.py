@@ -18,6 +18,9 @@ class TestNoughtsAndCrossesView():
         self.view.report_error(message)
         self._assert_stdout_is(message + '\n', capsys)
 
+    def test_reset(self):
+        self.view.reset()
+
     def _assert_stdout_is(self, expected, capsys):
         out, err = capsys.readouterr()
         assert out == expected
