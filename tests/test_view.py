@@ -28,6 +28,10 @@ class TestNoughtsAndCrossesView():
         self.view.add_move(0)
         self.fake_board_renderer.render.assert_called_with([0])
 
+    def test_add_different_move(self):
+        self.view.add_move(1)
+        self.fake_board_renderer.render.assert_called_with([1])
+
     def _assert_stdout_is(self, expected, capsys):
         out, err = capsys.readouterr()
         assert out == expected
