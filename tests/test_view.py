@@ -20,6 +20,7 @@ class TestNoughtsAndCrossesView():
 
     def test_reset(self):
         self.view.reset()
+        self.fake_board_renderer.render.assert_called_with([])
 
     def _assert_stdout_is(self, expected, capsys):
         out, err = capsys.readouterr()
