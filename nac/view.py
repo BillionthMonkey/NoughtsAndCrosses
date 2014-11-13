@@ -12,7 +12,7 @@ class NoughtsAndCrossesView():
         self._board_renderer.render([])
 
     def add_move(self, move):
-        pass
+        self._board_renderer.render([0])
 
     def report_error(self, message):
         print message
