@@ -40,3 +40,8 @@ class TestNoughtsAndCrossesView():
     def _assert_stdout_is(self, expected, capsys):
         out, err = capsys.readouterr()
         assert out == expected
+
+
+class TestBoardRenderer():
+    def test_empty_board(self, capsys):
+        board_renderer = BoardRenderer()
