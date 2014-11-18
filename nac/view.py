@@ -22,10 +22,13 @@ class NoughtsAndCrossesView():
 
 class BoardRenderer():
     def render(self, moves):
-        print '+---+---+---+\n' \
-              '|   |   |   |\n' \
-              '+---+---+---+\n' \
-              '|   |   |   |\n' \
-              '+---+---+---+\n' \
-              '|   |   |   |\n' \
-              '+---+---+---+'
+        for i in range(3):
+            self._print_border()
+            self._print_row()
+        self._print_border()
+
+    def _print_row(self):
+        print '|   |   |   |'
+
+    def _print_border(self):
+        print '+---+---+---+'
