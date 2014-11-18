@@ -42,6 +42,14 @@ class TestBoardRenderer():
     def test_empty_board(self, capsys):
         board_renderer = BoardRenderer()
         board_renderer.render([])
+        assert_stdout_is('+---+---+---+\n' \
+                         '|   |   |   |\n' \
+                         '+---+---+---+\n' \
+                         '|   |   |   |\n' \
+                         '+---+---+---+\n' \
+                         '|   |   |   |\n' \
+                         '+---+---+---+\n',
+                         capsys)
 
 
 def assert_stdout_is(expected, capsys):
