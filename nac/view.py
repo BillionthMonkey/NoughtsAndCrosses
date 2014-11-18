@@ -22,4 +22,10 @@ class NoughtsAndCrossesView():
 
 class BoardRenderer():
     def render(self, moves):
-        pass
+        print '+---+---+---+\n' \
+              '|   |   |   |\n' \
+              '+---+---+---+\n' \
+              '|   |   |   |\n' \
+              '+---+---+---+\n' \
+              '|   |   |   |\n' \
+              '+---+---+---+'
