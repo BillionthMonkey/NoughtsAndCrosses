@@ -45,3 +45,4 @@ class TestNoughtsAndCrossesView():
 class TestBoardRenderer():
     def test_empty_board(self, capsys):
         board_renderer = BoardRenderer()
+        board_renderer.render([])
