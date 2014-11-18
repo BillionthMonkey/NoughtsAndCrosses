@@ -9,16 +9,16 @@ class TestNoughtsAndCrossesView():
 
     def test_win(self, capsys):
         self.view.win()
-        self._assert_stdout_is('Congratulations; you won!\n', capsys)
+        assert_stdout_is('Congratulations; you won!\n', capsys)
 
     def test_draw(self, capsys):
         self.view.draw()
-        self._assert_stdout_is("It's a draw!\n", capsys)
+        assert_stdout_is("It's a draw!\n", capsys)
 
     def test_report_error(self, capsys):
         message = 'Illegal move.'
         self.view.report_error(message)
-        self._assert_stdout_is(message + '\n', capsys)
+        assert_stdout_is(message + '\n', capsys)
 
     def test_reset(self):
         self.view.reset()
@@ -37,12 +37,13 @@ class TestNoughtsAndCrossesView():
         self.view.add_move(1)
         self.fake_board_renderer.render.assert_called_with([0, 1])
 
-    def _assert_stdout_is(self, expected, capsys):
-        out, err = capsys.readouterr()
-        assert out == expected
-
 
 class TestBoardRenderer():
     def test_empty_board(self, capsys):
         board_renderer = BoardRenderer()
         board_renderer.render([])
+
+
+def assert_stdout_is(expected, capsys):
+    out, err = capsys.readouterr()
+    assert out == expected
