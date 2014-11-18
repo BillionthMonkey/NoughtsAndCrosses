@@ -1,6 +1,6 @@
 import sys
 import mock
-from nac.view import NoughtsAndCrossesView
+from nac.view import NoughtsAndCrossesView, BoardRenderer
 
 class TestNoughtsAndCrossesView():
     def setup_method(self, method):

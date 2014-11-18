@@ -18,3 +18,7 @@ class NoughtsAndCrossesView():
 
     def report_error(self, message):
         print message
+
+
+class BoardRenderer():
+    pass
