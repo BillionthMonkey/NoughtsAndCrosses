@@ -21,4 +21,5 @@ class NoughtsAndCrossesView():
 
 
 class BoardRenderer():
-    pass
+    def render(self, moves):
+        pass
