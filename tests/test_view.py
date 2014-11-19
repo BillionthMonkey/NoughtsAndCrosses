@@ -39,9 +39,11 @@ class TestNoughtsAndCrossesView():
 
 
 class TestBoardRenderer():
+    def setup_method(self, method):
+        self.board_renderer = BoardRenderer()
+
     def test_empty_board(self, capsys):
-        board_renderer = BoardRenderer()
-        board_renderer.render([])
+        self.board_renderer.render([])
         assert_stdout_is('+---+---+---+\n' \
                          '|   |   |   |\n' \
                          '+---+---+---+\n' \
@@ -52,8 +54,7 @@ class TestBoardRenderer():
                          capsys)
 
     def test_single_move(self, capsys):
-        board_renderer = BoardRenderer()
-        board_renderer.render([0])
+        self.board_renderer.render([0])
         assert_stdout_is('+---+---+---+\n' \
                          '| O |   |   |\n' \
                          '+---+---+---+\n' \
