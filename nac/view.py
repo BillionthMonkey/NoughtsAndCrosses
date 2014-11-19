@@ -23,12 +23,18 @@ class NoughtsAndCrossesView():
 class BoardRenderer():
     def render(self, moves):
         cells = [' '] * 9
-        player_one_moves = moves[0::2]
-        player_two_moves = moves[1::2]
+        number_of_players = 2
+        player_one = 0
+        player_two = 1
+
+        player_one_moves = moves[player_one::number_of_players]
         for player_one_move in player_one_moves:
             cells[player_one_move] = 'O'
+
+        player_two_moves = moves[player_two::number_of_players]
         for player_two_move in player_two_moves:
             cells[player_two_move] = 'X'
+
         for i in [0, 3, 6]:
             self._print_border()
             self._print_row(cells[i:i + 3])
