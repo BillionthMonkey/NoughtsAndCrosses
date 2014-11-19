@@ -23,13 +23,13 @@ class NoughtsAndCrossesView():
 class BoardRenderer():
     def __init__(self):
         self._number_of_players = 2
+        self._player_one = 0
+        self._player_two = 1
 
     def render(self, moves):
         cells = [' '] * 9
-        player_one = 0
-        player_two = 1
-        self._update_cells(player_one, moves, cells)
-        self._update_cells(player_two, moves, cells)
+        self._update_cells(self._player_one, moves, cells)
+        self._update_cells(self._player_two, moves, cells)
         row_size = 3
         start_of_rows = [0, 3, 6]
         for i in start_of_rows:
@@ -39,7 +39,7 @@ class BoardRenderer():
 
     def _update_cells(self, player, moves, cells):
         player_moves = moves[player::self._number_of_players]
-        symbol = 'O' if player is 0 else 'X'
+        symbol = 'O' if player is self._player_one else 'X'
         for player_move in player_moves:
             cells[player_move] = symbol
 
