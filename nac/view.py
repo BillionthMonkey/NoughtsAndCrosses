@@ -31,11 +31,11 @@ class BoardRenderer():
             cells[player_two_move] = 'X'
         for i in [0, 3, 6]:
             self._print_border()
-            self._print_row(cells[i + 0], cells[i + 1], cells[i + 2])
+            self._print_row([cells[i + 0], cells[i + 1], cells[i + 2]])
         self._print_border()
 
-    def _print_row(self, first_column, second_column, third_column):
-        print '| ' + first_column + ' | ' + second_column + ' | ' + third_column + ' |'
+    def _print_row(self, row):
+        print '| ' + ' | '.join(row) + ' |'
 
     def _print_border(self):
         print '+---+---+---+'
