@@ -75,6 +75,17 @@ class TestBoardRenderer():
                          '+---+---+---+\n',
                          capsys)
 
+    def test_full_board(self, capsys):
+        self.board_renderer.render([0, 1, 4, 2, 5, 3, 6, 8, 7])
+        assert_stdout_is('+---+---+---+\n' \
+                         '| O | X | X |\n' \
+                         '+---+---+---+\n' \
+                         '| X | O | O |\n' \
+                         '+---+---+---+\n' \
+                         '| O | O | X |\n' \
+                         '+---+---+---+\n',
+                         capsys)
+
 
 def assert_stdout_is(expected, capsys):
     out, err = capsys.readouterr()
