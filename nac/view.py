@@ -31,7 +31,7 @@ class BoardRenderer():
             cells[player_two_move] = 'X'
         for i in [0, 3, 6]:
             self._print_border()
-            self._print_row([cells[i + 0], cells[i + 1], cells[i + 2]])
+            self._print_row(cells[i:i + 3])
         self._print_border()
 
     def _print_row(self, row):
