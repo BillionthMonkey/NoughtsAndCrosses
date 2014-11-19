@@ -51,6 +51,18 @@ class TestBoardRenderer():
                          '+---+---+---+\n',
                          capsys)
 
+    def test_single_move(self, capsys):
+        board_renderer = BoardRenderer()
+        board_renderer.render([0])
+        assert_stdout_is('+---+---+---+\n' \
+                         '| O |   |   |\n' \
+                         '+---+---+---+\n' \
+                         '|   |   |   |\n' \
+                         '+---+---+---+\n' \
+                         '|   |   |   |\n' \
+                         '+---+---+---+\n',
+                         capsys)
+
 
 def assert_stdout_is(expected, capsys):
     out, err = capsys.readouterr()
