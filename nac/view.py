@@ -22,7 +22,7 @@ class NoughtsAndCrossesView():
 
 class BoardRenderer():
     def render(self, moves):
-        cells = [' ', ' ']
+        cells = [' '] * 9
         player_one_moves = moves[0::2]
         player_two_moves = moves[1::2]
         for player_one_move in player_one_moves:
@@ -30,14 +30,15 @@ class BoardRenderer():
         for player_two_move in player_two_moves:
             cells[player_two_move] = 'X'
         self._print_border()
-        self._print_row(cells[0], cells[1])
-        for i in range(2):
-            self._print_border()
-            self._print_row(' ', ' ')
+        self._print_row(cells[0], cells[1], cells[2])
+        self._print_border()
+        self._print_row(cells[3], cells[4], cells[5])
+        self._print_border()
+        self._print_row(cells[6], cells[7], cells[8])
         self._print_border()
 
-    def _print_row(self, first_column, second_column):
-        print '| ' + first_column + ' | ' + second_column + ' |   |'
+    def _print_row(self, first_column, second_column, third_column):
+        print '| ' + first_column + ' | ' + second_column + ' | ' + third_column + ' |'
 
     def _print_border(self):
         print '+---+---+---+'
