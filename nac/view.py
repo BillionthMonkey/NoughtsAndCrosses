@@ -30,9 +30,16 @@ class BoardRenderer():
         self._starts_of_rows = [0, 3, 6]
 
     def render(self, moves):
+        cells = self._create_board(moves)
+        self._print_board(cells)
+
+    def _create_board(self, moves):
         cells = [' '] * self._board_size
         self._update_cells(self._player_one, moves, cells)
         self._update_cells(self._player_two, moves, cells)
+        return cells
+
+    def _print_board(self, cells):
         for i in self._starts_of_rows:
             self._print_border()
             self._print_row(cells[i:i + self._row_size])
