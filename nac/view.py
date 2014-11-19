@@ -23,17 +23,15 @@ class NoughtsAndCrossesView():
 class BoardRenderer():
     def render(self, moves):
         self._print_border()
-        if not moves:
-            self._print_row()
-        else:
-            print '| O |   |   |'
+        first_column = 'O' if moves else ' '
+        self._print_row(first_column)
         for i in range(2):
             self._print_border()
-            self._print_row()
+            self._print_row(' ')
         self._print_border()
 
-    def _print_row(self):
-        print '|   |   |   |'
+    def _print_row(self, first_column):
+        print '| ' + first_column + ' |   |   |'
 
     def _print_border(self):
         print '+---+---+---+'
