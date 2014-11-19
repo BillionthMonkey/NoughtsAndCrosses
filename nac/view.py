@@ -29,12 +29,9 @@ class BoardRenderer():
             cells[player_one_move] = 'O'
         for player_two_move in player_two_moves:
             cells[player_two_move] = 'X'
-        self._print_border()
-        self._print_row(cells[0], cells[1], cells[2])
-        self._print_border()
-        self._print_row(cells[3], cells[4], cells[5])
-        self._print_border()
-        self._print_row(cells[6], cells[7], cells[8])
+        for i in [0, 3, 6]:
+            self._print_border()
+            self._print_row(cells[i + 0], cells[i + 1], cells[i + 2])
         self._print_border()
 
     def _print_row(self, first_column, second_column, third_column):
