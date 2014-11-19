@@ -30,9 +30,11 @@ class BoardRenderer():
         player_two = 1
         self._update_cells(player_one, moves, cells)
         self._update_cells(player_two, moves, cells)
-        for i in [0, 3, 6]:
+        row_size = 3
+        start_of_rows = [0, 3, 6]
+        for i in start_of_rows:
             self._print_border()
-            self._print_row(cells[i:i + 3])
+            self._print_row(cells[i:i + row_size])
         self._print_border()
 
     def _update_cells(self, player, moves, cells):
