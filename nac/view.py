@@ -25,11 +25,12 @@ class BoardRenderer():
         self._number_of_players = 2
         self._player_one = 0
         self._player_two = 1
+        self._board_size = 9
         self._row_size = 3
         self._starts_of_rows = [0, 3, 6]
 
     def render(self, moves):
-        cells = [' '] * 9
+        cells = [' '] * self._board_size
         self._update_cells(self._player_one, moves, cells)
         self._update_cells(self._player_two, moves, cells)
         for i in self._starts_of_rows:
