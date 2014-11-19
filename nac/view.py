@@ -22,7 +22,12 @@ class NoughtsAndCrossesView():
 
 class BoardRenderer():
     def render(self, moves):
-        for i in range(3):
+        self._print_border()
+        if not moves:
+            self._print_row()
+        else:
+            print '| O |   |   |'
+        for i in range(2):
             self._print_border()
             self._print_row()
         self._print_border()
