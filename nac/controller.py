@@ -6,6 +6,7 @@ class NoughtsAndCrossesController:
         self.view = view
 
     def reset(self):
+        self.model.reset()
         self.view.reset()
 
     def play_move(self, move):
