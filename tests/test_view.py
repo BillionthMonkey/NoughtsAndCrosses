@@ -24,6 +24,12 @@ class TestNoughtsAndCrossesView():
         self.view.reset()
         self.fake_board_renderer.render.assert_called_with([])
 
+    def test_move_after_reset(self):
+        self.view.add_move(0)
+        self.view.reset()
+        self.view.add_move(1)
+        self.fake_board_renderer.render.assert_called_with([1])
+
     def test_add_move(self):
         self.view.add_move(0)
         self.fake_board_renderer.render.assert_called_with([0])
@@ -36,12 +42,6 @@ class TestNoughtsAndCrossesView():
         self.view.add_move(0)
         self.view.add_move(1)
         self.fake_board_renderer.render.assert_called_with([0, 1])
-
-    def test_move_after_reset(self):
-        self.view.add_move(0)
-        self.view.reset()
-        self.view.add_move(1)
-        self.fake_board_renderer.render.assert_called_with([1])
 
 
 class TestBoardRenderer():
