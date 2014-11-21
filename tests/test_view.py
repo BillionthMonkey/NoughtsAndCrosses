@@ -49,6 +49,7 @@ class TestNoughtsAndCrossesView():
 
     def test_quit_prints_message(self, capsys):
         self.view.quit()
+        assert_stdout_is('Bye-bye.\n', capsys)
 
 
 class TestBoardRenderer():
