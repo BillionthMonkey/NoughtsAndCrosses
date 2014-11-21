@@ -46,3 +46,4 @@ class TestNoughtsAndCrossesController():
 
     def test_quit(self):
         self.controller.quit()
+        assert self.fake_view.quit.called
