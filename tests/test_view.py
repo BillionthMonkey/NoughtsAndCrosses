@@ -30,6 +30,10 @@ class TestNoughtsAndCrossesView():
         self.view.add_move(1)
         self.fake_board_renderer.render.assert_called_with([1])
 
+    def test_reset_message(self, capsys):
+        self.view.reset()
+        assert_stdout_is('Starting new game.\n', capsys)
+
     def test_add_move(self):
         self.view.add_move(0)
         self.fake_board_renderer.render.assert_called_with([0])
