@@ -22,7 +22,7 @@ class NoughtsAndCrossesView():
         print message
 
     def quit(self):
-        pass
+        print 'Bye-bye.'
 
     def _render(self):
         self._board_renderer.render(self._moves)
