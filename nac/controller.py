@@ -5,6 +5,9 @@ class NoughtsAndCrossesController:
         self.model = model
         self.view = view
 
+    def reset(self):
+        pass
+
     def play_move(self, move):
         if self.model.is_legal(move):
             self._play_legal_move(move)
