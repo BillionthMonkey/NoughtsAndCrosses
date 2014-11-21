@@ -47,6 +47,9 @@ class TestNoughtsAndCrossesView():
         self.view.add_move(1)
         self.fake_board_renderer.render.assert_called_with([0, 1])
 
+    def test_quit_prints_message(self, capsys):
+        self.view.quit()
+
 
 class TestBoardRenderer():
     def setup_method(self, method):
