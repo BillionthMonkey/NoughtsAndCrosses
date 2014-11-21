@@ -26,3 +26,4 @@ class NoughtsAndCrossesController:
             self.reset()
         if move_result == MoveResult.draw:
             self.view.draw()
+            self.model.reset()
