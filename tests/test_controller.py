@@ -43,3 +43,6 @@ class TestNoughtsAndCrossesController():
         self.controller.play_move(4)
         assert self.fake_view.draw.called
         assert not self.fake_view.win.called
+
+    def test_quit(self):
+        self.controller.quit()
