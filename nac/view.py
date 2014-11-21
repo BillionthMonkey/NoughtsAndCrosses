@@ -21,6 +21,9 @@ class NoughtsAndCrossesView():
     def report_error(self, message):
         print message
 
+    def quit(self):
+        pass
+
     def _render(self):
         self._board_renderer.render(self._moves)
 
