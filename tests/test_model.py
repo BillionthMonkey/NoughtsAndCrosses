@@ -36,7 +36,9 @@ class TestNoughtsAndCrossesModel():
         assert self.model.play_move(0) is MoveResult.no_result
 
     def test_reset_clears_move_history(self):
+        self.model.play_move(0)
         self.model.reset()
+        assert self.model._moves_played == []
 
 
 class TestResultChecker():
