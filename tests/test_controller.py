@@ -50,6 +50,12 @@ class TestNoughtsAndCrossesController():
         assert self.fake_view.draw.called
         assert not self.fake_view.win.called
 
+    def test_draw_resets_model(self):
+        self.fake_model.is_legal.return_value = True
+        self.fake_model.play_move.return_value = MoveResult.draw
+        self.controller.play_move(4)
+        assert self.fake_model.reset.called
+
     def test_quit(self):
         self.controller.quit()
         assert self.fake_view.quit.called
