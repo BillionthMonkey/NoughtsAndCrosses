@@ -5,7 +5,7 @@ class NoughtsAndCrossesModel():
         self._number_of_cells = number_of_cells
 
     def reset(self):
-        pass
+        self._moves_played = []
 
     def is_legal(self, move):
         return move in range(self._number_of_cells) \
