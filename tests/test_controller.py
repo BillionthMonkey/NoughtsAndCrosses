@@ -31,22 +31,16 @@ class TestNoughtsAndCrossesController():
         self.fake_model.play_move.assert_called_with(2)
 
     def test_playing_move_that_wins_updates_view(self):
-        self.fake_model.is_legal.return_value = True
-        self.fake_model.play_move.return_value = MoveResult.win
-        self.controller.play_move(4)
+        self._win()
         assert self.fake_view.win.called
         assert not self.fake_view.draw.called
 
     def test_win_resets_model(self):
-        self.fake_model.is_legal.return_value = True
-        self.fake_model.play_move.return_value = MoveResult.win
-        self.controller.play_move(4)
+        self._win()
         assert self.fake_model.reset.called
 
     def test_win_resets_view(self):
-        self.fake_model.is_legal.return_value = True
-        self.fake_model.play_move.return_value = MoveResult.win
-        self.controller.play_move(4)
+        self._win()
         assert self.fake_view.reset.called
 
     def test_playing_move_that_draws_updates_view(self):
@@ -67,3 +61,8 @@ class TestNoughtsAndCrossesController():
     def test_reset_calls_model(self):
         self.controller.reset()
         assert self.fake_model.reset.called
+
+    def _win(self):
+        self.fake_model.is_legal.return_value = True
+        self.fake_model.play_move.return_value = MoveResult.win
+        self.controller.play_move(4)
