@@ -10,7 +10,8 @@ class NoughtsAndCrossesView():
         print "It's a draw!"
 
     def reset(self):
-        self._board_renderer.render([])
+        self._moves = []
+        self._board_renderer.render(self._moves)
 
     def add_move(self, move):
         self._moves.append(move)
