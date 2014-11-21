@@ -50,3 +50,4 @@ class TestNoughtsAndCrossesController():
 
     def test_reset(self):
         self.controller.reset()
+        assert self.fake_view.reset.called
