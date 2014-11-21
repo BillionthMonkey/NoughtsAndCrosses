@@ -48,6 +48,6 @@ class TestNoughtsAndCrossesController():
         self.controller.quit()
         assert self.fake_view.quit.called
 
-    def test_reset(self):
+    def test_reset_calls_view(self):
         self.controller.reset()
         assert self.fake_view.reset.called
