@@ -10,6 +10,7 @@ class NoughtsAndCrossesView():
         print "It's a draw!"
 
     def reset(self):
+        print 'Starting new game.'
         self._moves = []
         self._render()
 
