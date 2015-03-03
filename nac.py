@@ -15,8 +15,8 @@ def test_different_legal_move_is_legal():
 
 def test_high_illegal_move_is_not_legal():
     move = 9
-    assert is_legal(move) or move < 9 is False
+    assert is_legal(move) is False
 
 
 def is_legal(move):
-    return move >= 0
+    return move >= 0 and move < 9
