@@ -14,4 +14,4 @@ def test_different_legal_move_is_legal():
 
 
 def is_legal(move):
-    return move == 0 or move > 0
+    return move >= 0
