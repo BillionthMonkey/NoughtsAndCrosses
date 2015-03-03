@@ -8,5 +8,10 @@ def test_illegal_move_is_not_legal():
     assert is_legal(move) is False
 
 
+def test_different_legal_move_is_legal():
+    move = 8
+    assert is_legal(move)
+
+
 def is_legal(move):
     return move == 0
