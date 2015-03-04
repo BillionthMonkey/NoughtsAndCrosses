@@ -32,7 +32,7 @@ def test_moves_for_player_one_are_at_even_indices():
 
 def test_moves_for_player_two_are_at_odd_indices():
     moves_played = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-    player_two_moves = []
+    player_two_moves = moves_played[1::2]
     assert player_two_moves == [1, 3, 5, 7]
 
 
