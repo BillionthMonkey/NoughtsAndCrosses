@@ -18,5 +18,11 @@ def test_high_illegal_move_is_not_legal():
     assert is_legal(move) is False
 
 
+def test_move_is_illegal_if_already_played():
+    moves_played = [0]
+    move = 0
+    assert is_legal(move) is False
+
+
 def is_legal(move):
     return move >= 0 and move < 9
