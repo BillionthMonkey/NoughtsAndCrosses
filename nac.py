@@ -41,4 +41,5 @@ def is_legal(move, moves_played):
 
 
 def moves_for_player(player, moves_played):
-    return moves_played[player::2]
+    number_of_players = 2
+    return moves_played[player::number_of_players]
