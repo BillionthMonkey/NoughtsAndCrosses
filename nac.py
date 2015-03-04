@@ -26,15 +26,19 @@ def test_move_is_illegal_if_already_played():
 
 def test_moves_for_player_one_are_at_even_indices():
     moves_played = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-    player_one_moves = moves_played[0::2]
+    player_one_moves = moves_for_player(0, moves_played)
     assert player_one_moves == [0, 2, 4, 6, 8]
 
 
 def test_moves_for_player_two_are_at_odd_indices():
     moves_played = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-    player_two_moves = moves_played[1::2]
+    player_two_moves = moves_for_player(1, moves_played)
     assert player_two_moves == [1, 3, 5, 7]
 
 
 def is_legal(move, moves_played):
     return move >= 0 and move < 9 and move not in moves_played
+
+
+def moves_for_player(player, moves_played):
+    return moves_played[player::2]
