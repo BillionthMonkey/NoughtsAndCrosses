@@ -26,7 +26,7 @@ def test_move_is_illegal_if_already_played():
 
 def test_moves_for_player_one_are_at_even_indices():
     moves_played = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-    player_one_moves = []
+    player_one_moves = moves_played[0::2]
     assert player_one_moves == [0, 2, 4, 6, 8]
 
 
