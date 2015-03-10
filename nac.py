@@ -36,6 +36,16 @@ def test_moves_for_player_two_are_at_odd_indices():
     assert player_two_moves == [1, 3, 5, 7]
 
 
+def test_player_moves_win():
+    player_moves = [0, 1, 2]
+    winning_moves = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
+    ]
+    assert player_moves not in winning_moves
+
+
 def is_legal(move, moves_played):
     return move >= 0 and move < 9 and move not in moves_played
 
