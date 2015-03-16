@@ -53,7 +53,7 @@ def test_player_moves_in_a_different_order_win():
         [0, 3, 6], [1, 4, 7], [2, 5, 8],
         [0, 4, 8], [2, 4, 6]
     ]
-    assert player_moves in winning_moves
+    assert sorted(player_moves) in winning_moves
 
 
 def is_legal(move, moves_played):
