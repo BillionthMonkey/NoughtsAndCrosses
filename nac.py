@@ -1,3 +1,6 @@
+import itertools
+
+
 def test_legal_move_is_legal():
     move = 0
     assert is_legal(move, []) is True
@@ -48,7 +51,8 @@ def test_player_moves_in_a_different_order_win():
 
 def test_more_than_three_player_moves_still_wins():
     player_moves = [8, 2, 1, 0]
-    assert is_win(player_moves)
+    combinations = itertools.combinations(player_moves, 3)
+    assert any([is_win(combination) for combination in combinations])
 
 
 def is_legal(move, moves_played):
