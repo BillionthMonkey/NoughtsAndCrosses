@@ -46,6 +46,11 @@ def test_player_moves_in_a_different_order_win():
     assert is_win(player_moves)
 
 
+def test_more_than_three_player_moves_still_wins():
+    player_moves = [8, 2, 1, 0]
+    assert is_win(player_moves)
+
+
 def is_legal(move, moves_played):
     return move >= 0 and move < 9 and move not in moves_played
 
