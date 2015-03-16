@@ -46,6 +46,16 @@ def test_player_moves_win():
     assert player_moves in winning_moves
 
 
+def test_player_moves_in_a_different_order_win():
+    player_moves = [2, 1, 0]
+    winning_moves = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
+    ]
+    assert player_moves in winning_moves
+
+
 def is_legal(move, moves_played):
     return move >= 0 and move < 9 and move not in moves_played
 
