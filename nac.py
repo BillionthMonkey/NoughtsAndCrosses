@@ -41,17 +41,17 @@ def test_moves_for_player_two_are_at_odd_indices():
 
 def test_player_moves_win():
     player_moves = [0, 1, 2]
-    assert is_win(player_moves)
+    assert is_win(player_moves) is True
 
 
 def test_player_moves_in_a_different_order_win():
     player_moves = [2, 1, 0]
-    assert is_win(player_moves)
+    assert is_win(player_moves) is True
 
 
 def test_more_than_three_player_moves_still_wins():
     player_moves = [8, 2, 1, 0]
-    assert is_win(player_moves)
+    assert is_win(player_moves) is True
 
 
 def test_first_player_played_last_move():
