@@ -54,6 +54,12 @@ def test_more_than_three_player_moves_still_wins():
     assert is_win(player_moves)
 
 
+def test_first_player_played_last_move():
+    game_moves = [0, 3, 1, 5, 2]
+    last_player = 1
+    assert last_player is 0
+
+
 def is_legal(move, moves_played):
     return move >= 0 and move < 9 and move not in moves_played
 
