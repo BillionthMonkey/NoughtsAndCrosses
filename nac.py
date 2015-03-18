@@ -56,7 +56,7 @@ def test_more_than_three_player_moves_still_wins():
 
 def test_first_player_played_last_move():
     game_moves = [0, 3, 1, 5, 2]
-    last_player = 1
+    last_player = (len(game_moves) + 1) % 2
     assert last_player is 0
 
 
