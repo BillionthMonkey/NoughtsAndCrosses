@@ -68,7 +68,7 @@ def test_first_player_wins():
     game_moves = [0, 3, 1, 5, 2]
     player = last_player(game_moves)
     player_moves = moves_for_player(player, game_moves)
-    assert is_win(player_moves) is False
+    assert is_win(player_moves) is True
 
 
 def is_legal(move, moves_played):
