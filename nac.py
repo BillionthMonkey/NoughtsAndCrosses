@@ -63,7 +63,7 @@ def test_first_player_played_last_move():
 def test_second_player_played_last_move():
     game_moves = [0, 1, 2, 3, 4, 5]
     last_player = (len(game_moves) + 1) % 2
-    assert last_player is 0
+    assert last_player is 1
 
 
 def is_legal(move, moves_played):
