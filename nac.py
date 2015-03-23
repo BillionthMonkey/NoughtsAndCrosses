@@ -66,16 +66,12 @@ def test_second_player_played_last_move():
 
 def test_first_player_wins():
     game_moves = [0, 3, 1, 5, 2]
-    player = last_player(game_moves)
-    player_moves = moves_for_player(player, game_moves)
-    assert is_win(player_moves) is True
+    assert last_move_wins(game_moves) is True
 
 
 def test_second_player_wins():
     game_moves = [4, 0, 3, 1, 8, 2]
-    player = last_player(game_moves)
-    player_moves = moves_for_player(player, game_moves)
-    assert is_win(player_moves) is True
+    assert last_move_wins(game_moves) is True
 
 
 def is_legal(move, moves_played):
@@ -100,3 +96,9 @@ def is_win(player_moves):
 
 def last_player(moves_played):
     return (len(moves_played) + 1) % 2
+
+
+def last_move_wins(moves_played):
+    player = last_player(moves_played)
+    player_moves = moves_for_player(player, moves_played)
+    return is_win(player_moves)
